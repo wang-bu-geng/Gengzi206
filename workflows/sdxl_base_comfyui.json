@@ -1,0 +1,42 @@
+{
+  "4": {
+    "inputs": { "ckpt_name": "__MODEL__" },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": { "title": "加载模型 (SDXL)" }
+  },
+  "5": {
+    "inputs": { "width": "__WIDTH__", "height": "__HEIGHT__", "batch_size": "__BATCH_SIZE__" },
+    "class_type": "EmptyLatentImage",
+    "_meta": { "title": "空潜空间" }
+  },
+  "6": {
+    "inputs": { "text": "__POSITIVE__", "clip": ["4", 1] },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "正向提示词" }
+  },
+  "7": {
+    "inputs": { "text": "__NEGATIVE__", "clip": ["4", 1] },
+    "class_type": "CLIPTextEncode",
+    "_meta": { "title": "负向提示词" }
+  },
+  "3": {
+    "inputs": {
+      "seed": "__SEED__", "steps": "__STEPS__", "cfg": "__CFG__",
+      "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0,
+      "model": ["4", 0], "positive": ["6", 0], "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    },
+    "class_type": "KSampler",
+    "_meta": { "title": "采样器" }
+  },
+  "8": {
+    "inputs": { "samples": ["3", 0], "vae": ["4", 2] },
+    "class_type": "VAEDecode",
+    "_meta": { "title": "VAE解码" }
+  },
+  "9": {
+    "inputs": { "filename_prefix": "__PREFIX__", "images": ["8", 0] },
+    "class_type": "SaveImage",
+    "_meta": { "title": "保存图片" }
+  }
+}

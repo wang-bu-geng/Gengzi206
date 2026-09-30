@@ -1,0 +1,80 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": "__CFG__",
+      "denoise": 1.0,
+      "latent_image": ["5", 0],
+      "model": ["4", 0],
+      "negative": ["7", 0],
+      "positive": ["6", 0],
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "seed": "__SEED__",
+      "steps": "__STEPS__"
+    },
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "__MODEL__"
+    },
+    "_meta": {
+      "title": "Load Checkpoint (SDXL)"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "batch_size": "__BATCH_SIZE__",
+      "height": "__HEIGHT__",
+      "width": "__WIDTH__"
+    },
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["4", 1],
+      "text": "__POSITIVE__"
+    },
+    "_meta": {
+      "title": "CLIP Text Encode (Positive)"
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["4", 1],
+      "text": "__NEGATIVE__"
+    },
+    "_meta": {
+      "title": "CLIP Text Encode (Negative)"
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    },
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "__PREFIX__",
+      "images": ["8", 0]
+    },
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

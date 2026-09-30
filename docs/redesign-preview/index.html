@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>更子 · 视觉方向 A/B 对比</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',-apple-system,'PingFang SC',sans-serif;background:#F1EDE4;color:#25201A;padding:56px 24px;line-height:1.7}
+.wrap{max-width:1040px;margin:0 auto}
+h1{font-family:'Noto Serif SC','Songti SC',serif;font-size:34px;font-weight:700;margin-bottom:10px}
+.sub{color:#6B6254;font-size:15px;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;background:#FCFAF5;border:1px solid #E0D8C6;box-shadow:0 1px 2px rgba(60,48,30,.05),0 10px 30px -14px rgba(60,48,30,.25);transition:transform .2s,box-shadow .2s;display:block}
+.card:hover{transform:translateY(-3px)}
+.preview{height:230px;display:grid;place-items:center;position:relative;overflow:hidden}
+.preview.a{background:#F4F0E8}
+.preview.b{background:#F4F6F6}
+.sw{width:78%;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.sw .bar{height:18px;display:flex;align-items:center;gap:5px;padding:0 8px}
+.a .sw .bar{background:#FBF8F1;border-bottom:1px solid #E0D8C6}
+.b .sw .bar{background:#fff;border-bottom:1px solid #DFE4E4}
+.sw .bar i{width:7px;height:7px;border-radius:50%}
+.sw .bd{padding:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.a .sw .bd{background:#F4F0E8}
+.b .sw .bd{background:#F4F6F6}
+.tile{aspect-ratio:16/10;border-radius:5px}
+.a .tile.done{background:linear-gradient(135deg,#5a6b7c,#2f3d4e);position:relative}
+.a .tile.todo{border:1.5px dashed #C9BEA6;background:#F7F3EA}
+.a .tile.run{background:linear-gradient(135deg,#B9A98C,#8F7F62)}
+.a .tile .n{position:absolute;top:4px;left:5px;color:#fff;font-family:'Noto Serif SC',serif;font-size:10px;font-weight:700}
+.b .tile.done{background:linear-gradient(135deg,#4d6584,#28394c);position:relative}
+.b .tile.todo{border:1.5px dashed #B8C2C2;background:#F8FAFA}
+.b .tile.run{background:linear-gradient(135deg,#7d94aa,#51688a)}
+.b .tile .n{position:absolute;top:4px;left:5px;color:#fff;font-size:9px;font-weight:700}
+.body{padding:22px 24px 24px}
+.tag{font-size:12px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:99px;display:inline-block;margin-bottom:10px}
+.a-tag{background:#F6E6E0;color:#A33322}
+.b-tag{background:#E7EDF4;color:#314A6B}
+h2{font-size:20px;margin-bottom:6px}
+.card.a h2{font-family:'Noto Serif SC','Songti SC',serif}
+.desc{font-size:13.5px;color:#6B6254;margin-bottom:14px}
+ul{list-style:none;font-size:13px;color:#4a443a}
+li{padding:3px 0 3px 18px;position:relative}
+li::before{content:"—";position:absolute;left:0;color:#A9803E}
+.card.b li::before{color:#3D5A80}
+.open{margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600}
+.card.a .open{color:#A33322}
+.card.b .open{color:#314A6B}
+.notes{margin-top:44px;background:#FCFAF5;border:1px solid #E0D8C6;border-radius:14px;padding:24px 28px;font-size:13.5px;color:#4a443a}
+.notes h3{font-size:15px;margin-bottom:10px;color:#25201A}
+.notes p{margin-bottom:6px}
+.notes b{color:#A33322}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>「更子」视觉方向 A / B 对比</h1>
+  <p class="sub">同一张页面（第 3 阶段 · 分镜卡片墙）、同一套信息结构，仅更换视觉皮肤。图片为系统内真实生成的角色图。</p>
+
+  <div class="cards">
+    <a class="card a" href="variant-a-cinnabar.html">
+      <div class="preview a">
+        <div class="sw">
+          <div class="bar"><i style="background:#BC3E2C"></i><i style="background:#D2C8B2"></i><i style="background:#D2C8B2"></i></div>
+          <div class="bd">
+            <div class="tile done"><span class="n">镜 01</span></div>
+            <div class="tile run"></div>
+            <div class="tile todo"></div>
+            <div class="tile done"><span class="n">镜 08</span></div>
+            <div class="tile todo"></div>
+            <div class="tile done" style="background:linear-gradient(135deg,#6e5c6e,#3d3140)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <span class="tag a-tag">方案 A · 主推</span>
+        <h2>纸墨朱砂</h2>
+        <p class="desc">暖纸底 · 墨色文字 · 思源宋体标题 · 朱砂红唯一行动色。气质：片场 + 编辑部，与中文短剧内容强绑定，辨识度高。</p>
+        <ul>
+          <li>宋体"镜 01"有分镜脚本的戏剧感</li>
+          <li>暖纸底色适合长时间阅读剧本/批量监看</li>
+          <li>品牌联想：场记红、开拍、中式剧场</li>
+        </ul>
+        <span class="open">打开完整静态稿 →</span>
+      </div>
+    </a>
+
+    <a class="card b" href="variant-b-indigo.html">
+      <div class="preview b">
+        <div class="sw">
+          <div class="bar"><i style="background:#3D5A80"></i><i style="background:#C9D1D1"></i><i style="background:#C9D1D1"></i></div>
+          <div class="bd">
+            <div class="tile done"><span class="n">01</span></div>
+            <div class="tile run"></div>
+            <div class="tile todo"></div>
+            <div class="tile done"><span class="n">08</span></div>
+            <div class="tile todo"></div>
+            <div class="tile done" style="background:linear-gradient(135deg,#5e7490,#33455c)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <span class="tag b-tag">方案 B · 备选</span>
+        <h2>靛青夜场</h2>
+        <p class="desc">冷纸白 · Inter/黑体 · 靛青行动色。气质：Frame.io / Linear 式现代专业工具，冷静、理性、安全。</p>
+        <ul>
+          <li>工程感强，信息密度与效率优先</li>
+          <li>无额外宋体加载，实现成本最低</li>
+          <li>风险：与同类工具同质化，缺品牌记忆点</li>
+        </ul>
+        <span class="open">打开完整静态稿 →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="notes">
+    <h3>评审时请重点观察（两版一致的部分即已定稿，不受配色影响）</h3>
+    <p>1. <b>分镜卡片墙</b>取代原文字表格：画面是主角，编号/景别/运镜/时长环绕画面排布。</p>
+    <p>2. <b>四态系统</b>：已成片（绿勾 + hover 播放）、生成中（进度环 + 第几个 + 已用时间）、待生成（虚线场记板）、失败（原因 + 一键重试）。</p>
+    <p>3. <b>右侧渲染队列</b>：总进度环、预计剩余时间、逐条任务状态、失败可直达——批量生成时不再盯着一串转圈。</p>
+    <p>4. <b>上下文条</b>：面包屑 + 自动保存时刻 + 本集进度；步骤轴已完成阶段可回跳。</p>
+    <p>5. <b>操作收敛</b>：卡片上的编辑/重生成/下载仅 hover 出现；全页只有一个主色按钮；卡片墙/表格双视图并存。</p>
+    <p style="margin-top:10px;color:#9B917E">注：静态稿仅展示视觉与布局，非最终交互；分镜缩略图当前由真实角色图代替示意。</p>
+  </div>
+</div>
+</body>
+</html>
