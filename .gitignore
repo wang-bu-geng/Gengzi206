@@ -1,0 +1,76 @@
+# Binaries
+bin/
+wangbugeng-drama
+backend
+*.exe
+*.dll
+*.so
+*.dylib
+wangbugeng-drama.exe
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+
+# Data (database files)
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Uploaded storage
+data/storage/videos/*
+!data/storage/videos/.gitkeep
+
+# Frontend build output
+web/dist/
+web/node_modules/
+web/.vite/
+web/.env.local
+
+# Config file (use config.example.yaml as template)
+configs/config.yaml
+
+# Docker publish documentation (optional)
+DOCKER_PUBLISH.md
+build.sh
+/data/storage/
+/web/package-lock.json
+.DS_Store
+# Local compiled executable and editor state
+drama-backend
+.trae/
